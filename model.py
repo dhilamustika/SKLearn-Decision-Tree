@@ -28,7 +28,6 @@ acc_secore = round(accuracy_score(y_pred, y_test), 3)
 # predict the label of a new set of data
 #print(tree_model.predict([[6.2, 3.4, 5.4, 2.3]])[0])    # ([[SepalLength, SepalWidth, PetalLength, PetalWidth]])
 
-
 # the visualization of the decision tree
 export_graphviz(
     tree_model,
