@@ -1,4 +1,3 @@
-from google.colab import files
 import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -10,8 +9,6 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-# upload dataset
-uploaded = files.upload()
 iris = pd.read_csv('Iris.csv')
 iris.drop('Id',axis=1,inplace=True)
 
