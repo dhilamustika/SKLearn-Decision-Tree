@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-# upload the dataset
+# upload dataset
 uploaded = files.upload()
 iris = pd.read_csv('Iris.csv')
 iris.drop('Id',axis=1,inplace=True)
@@ -25,9 +25,11 @@ y_pred = tree_model.predict(X_test)
 acc_secore = round(accuracy_score(y_pred, y_test), 3)
 #print('Accuracy: ', acc_secore)
 
-# predict the label of a new set of data using 
+# predict the label of a new set of data
 #print(tree_model.predict([[6.2, 3.4, 5.4, 2.3]])[0])    # ([[SepalLength, SepalWidth, PetalLength, PetalWidth]])
 
+
+# the visualization of the decision tree
 export_graphviz(
     tree_model,
     out_file = "iris_tree.dot",
@@ -37,7 +39,6 @@ export_graphviz(
     filled =True
 )
 
-# display the visualization of the decision tree
 render('dot', 'png', 'iris_tree.dot')
 image_path = "/content/iris_tree.dot.png"
 image = mpimg.imread(image_path)
